@@ -1,0 +1,3 @@
+function getAllTodos() {
+    const apiUrl = ""
+}
