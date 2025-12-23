@@ -27,14 +27,6 @@ function displayTodos(todos){
 
         card.appendChild(colorAndTitleDiv);
 
-        // const detailBtn = document.createElement('button');
-        // detailBtn.appendChild(document.createTextNode("🠊"));
-        // detailBtn.classList.add("detail-btn");
-        // detailBtn.addEventListener('click', () => {
-        //     window.location.assign('./detail.html?todoId=' + todo.id)
-        // })
-
-        // card.appendChild(detailBtn);
 
         const actionsDiv = document.createElement('div');
         let completeActionIcon;
@@ -53,11 +45,7 @@ function displayTodos(todos){
 
                 todo.done = !todo.done;
                 displayTodos(todos);
-
-                // getAllTodos().then(results => {
-                //     todos = results;
-                //     displayTodos(todos)
-                // })          
+ 
             })
         })
 
@@ -77,14 +65,6 @@ function displayTodos(todos){
     }
 
 }
-
-let todos = []
-
-getAllTodos().then(results => {
-    todos = results;
-    displayTodos(todos)
-})
-
 
 function orderByTitle() {
     todos.sort((t1, t2) => t1.title.localeCompare(t2.title));
@@ -111,6 +91,13 @@ document.getElementById("sort-title-btn")
 
 document.getElementById("sort-creation-btn")
 .addEventListener('click', orderByCreationDate);
+
+let todos = []
+
+getAllTodos().then(results => {
+    todos = results;
+    displayTodos(todos)
+})
 
 
 // due tasti nella home (lista di todo)

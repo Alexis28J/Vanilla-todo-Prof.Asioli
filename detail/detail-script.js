@@ -52,18 +52,6 @@ function formaDate(dateISO) {
     return date.toLocaleDateString("it-IT", options);
 }
 
-const searchParams = new URLSearchParams(window.location.search);
-
-const id = searchParams.get('todoId');
-
-let selectedTodo;
-
-getTodo(id).then(result => {
-    selectedTodo = result;
-    displayTodo(result)
-});
-
-
 function deleteTodoAndRedirect() {
 
     if (confirm("Vuoi veramente cancellare il todo???")) {
@@ -86,3 +74,14 @@ document.getElementById("status-btn")
 
 document.getElementById("delete-btn")
 .addEventListener("click", deleteTodoAndRedirect)
+
+const searchParams = new URLSearchParams(window.location.search);
+
+const id = searchParams.get('todoId');
+
+let selectedTodo;
+
+getTodo(id).then(result => {
+    selectedTodo = result;
+    displayTodo(selectedTodo)
+});

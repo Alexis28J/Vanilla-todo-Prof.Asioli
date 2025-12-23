@@ -2,7 +2,7 @@ import {postTodo} from "../shared/todo-service.js"
 
 function saveTodo(event) {
     event.preventDefault();
-    console.log(event);
+    // console.log(event);
     //const form = event.target;
     const form = document.getElementById('todo-form');
     const data = new FormData(form);
